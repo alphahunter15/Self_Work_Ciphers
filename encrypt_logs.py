@@ -236,16 +236,24 @@ if password == 'college':
                 decrypt3('essay_ideas.txt')
             else:
                 print('unexpected command, try again')
-        elif q == 'break' or 'quit' or 'exit':
+        elif q == 'break':
             print('Okay, exiting')
             break 
+        elif q == 'quit':
+            print('Okay, exiting')
+            break
+        elif q == 'exit':
+            print('Okay, exiting')
+            break
         else:
             print('leave, you sit on a throne of lies.')
-            if count_wrong > 2:
+            if count_wrong >= 2:
                 break
             count_wrong = count_wrong + 1
-            print('you have' + str(3-count_wrong) + 'more attempts')
+            print('you have ' + str(3-count_wrong) + ' more attempts')
 else:
   print('wrong password, goodbye')
+
+
 
 
