@@ -50,7 +50,7 @@ For a list of possible tests and expected responses see [this google doc](https:
 # How To Use
 This is supposed to be used for storing three types of information in three different logs. Although I used the methods for a personal log, a log for college essay ideas, and a log for christmas gift ideas, the uses of this can be expanded to many more logs with different storing functions. This can be used for fun, like how I have used it, or it can be used for storing your deepest, darkest secrets (although this is more of a proof of concept than a finished project so I would wait until version 2.0 comes out).
 # Where This Can Be Improved
-I could combine all encryption methods into one to create a much more complicated and harder to crack system. For example, it is easy to see a string is encoded ith Fernet encryption becuase each string starts with gAAAAA. Combining methods would get rid of this hint. 
+I could combine all encryption methods into one to create a much more complicated and harder to crack the system. For example, it is easy to see a string is encoded with Fernet encryption becuase each string starts with gAAAAA. Combining methods would get rid of this hint. 
 # Contribute
 See [Contributions.md](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/Contributions.md)
 # Credits
