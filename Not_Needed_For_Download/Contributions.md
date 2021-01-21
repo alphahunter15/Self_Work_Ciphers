@@ -15,4 +15,4 @@ Also, pull requests are always helpful and welcome.
 
 Any kind of input is welcome and greatly appreciated, even if not in the aforementioned format. Thank you again for contributing!
 
-If you have any specific questions or comments feel free to email me at <isaiahseals5@gmail.com>
+If you have any specific questions or comments feel free to email me at <isaiahseals5@gmail.com>.
