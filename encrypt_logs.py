@@ -19,16 +19,16 @@ n = 0
 
 p = []
 
-def encrypt1(Plaintextt):
+def encrypt1(Plaintext):
     '''
     encrypt1 uses an integer variable to add one number to the numerical value of each letter in the string, incrementing each letter integer value by one.
-    It then uses the InverseRandomizeNumToLetter library to randomly assign the incremented numbers to a letter. Then each letter is added to an array, which then is made into a string.
-    the string is then reversed and added to isaiah_log
+    It then uses the InverseRandomizeNumToLetter library to randomly assign the incremented numbers to a letter. Then each letter is added to an array, 
+    which then is made into a string. the string is then reversed and added to isaiah_log
     '''
     for Pt_Letter in Plaintext:
         Pt_Number = AlphaToNum[Pt_Letter]
         global n 
-        Pt_n_Number = (CipherText1 + n) % 66 
+        Pt_n_Number = (Pt_Number + n) % 66 
         n += 1 # increments n
         Ct_Number = InverseRandomizeNumToLetter[Pt_n_Number] 
         p.append(Ct_Number) 
@@ -50,7 +50,7 @@ def encrypt2(Plaintext):
         Pt_Number = AlphaToNum[Pt_Letter] # takes the letter and changes it to a corresponding number
         global n 
         Song_Letter = Song[n] # calls on incrementing indexes of the song lyrics
-        Song_Num = AlphaToNum[letter]
+        Song_Num = AlphaToNum[Song_Letter]
         Ct_Number = (Pt_Number + Song_Num) % 66 
         n += 1
         Ct_Letter = InverseRandomizeNumToLetter[Ct_Number] #
@@ -63,16 +63,17 @@ def encrypt2(Plaintext):
     i.write('\n')
     i.close()
 
-'''
-encrypt3 uses Fernet symmetric encryption to encrypt my colllege essay ideas for people. This obviously has to be the most secure becuase it is the first thing
-people would check if I were to get hacked. It uses a password that can be set in the code here. In this case, it is 'colleges'. Then, the string of 
-encrypted text is trimmed for easier decrpytion and then is passed to essay_ideas.
-'''
-def encrypt3(Plaintext):
+
+def encrypt3(Plaintext):    
+    '''
+    encrypt3 uses Fernet symmetric encryption to encrypt my colllege essay ideas for people. This obviously has to be the most secure becuase it is the first thing
+    people would check if I were to get hacked. It uses a password that can be set in the code here. In this case, it is 'colleges'. Then, the string of 
+    encrypted text is trimmed for easier decrpytion and then is passed to essay_ideas.
+    '''
     password_provided = input('password:') # provides input for what password must be inputed to access the Plaintext
-    if password_proided != 'colleges':
+    if password_provided != 'colleges':
         print('you ahve inputed the incorrect password. Goodbye')
-        break
+        quit
     password = password_provided.encode()
     salt = b'colleges' # provides what the password should be
     # This creates a hash key
@@ -107,7 +108,7 @@ def decrypt1():
     for Inv_Ct_String in Ct_Lines:
       Ct_String = rev_str(Inv_Ct_String)
       for Ct_Letter in Ct_String:
-          if x == '\n':
+          if Ct_Letter == '\n':
               global l
               l.append('\n')
           else:
@@ -115,7 +116,7 @@ def decrypt1():
               global n
               Pt_Number = (Ct_Number - n) % 66 
               n += 1 # increments n 
-              Pt_Letter = inverseAlphaToNum[Pt_Number]
+              Pt_Letter = InverseAlphaToNum[Pt_Number]
               l.append(Pt_Letter) 
               message_final = ''.join(l) 
       n = 0
@@ -134,7 +135,7 @@ def decrypt2():
     for Inv_Ct_String in Ct_Lines:
       Ct_String = rev_str(Inv_Ct_String) # reverses the string of CipherText     
       for Ct_Letter in Ct_String:
-          if x == '\n':
+          if Ct_Letter == '\n':
               global HARVARDmsg
               HARVARDmsg.append('\n')
           else:
@@ -143,7 +144,7 @@ def decrypt2():
               n+=1
               Ct_Number = RandomizeNumToLetter[Ct_Letter] # uses the same process as in decrypt1 to reverse the letter to number encryption
               Pt_Number = (Ct_Number - AlphaToNum[Song_Letter]) % 66
-              Pt_Letter = inverseAlphaToNum[Pt_Number]
+              Pt_Letter = InverseAlphaToNum[Pt_Number]
               HARVARDmsg.append(Pt_Letter)
               message_final = ''.join(HARVARDmsg)
       n = 0
@@ -158,9 +159,9 @@ def decrypt3():
     password = password_provided.encode()
     # next lines are for creating the hash key using the password 'colleges'
     salt = b'colleges'
-     if password_proided != 'colleges':
+    if password_provided != 'colleges':
         print('you ahve inputed the incorrect password. Goodbye')
-        break
+        quit
     kdf = PBKDF2HMAC(
     algorithm=hashes.SHA256(),
     length=32,
@@ -173,7 +174,7 @@ def decrypt3():
     org_msg = open('essay_ideas.txt', 'r')
     Ct_Lines = org_msg.readlines() # reads off the lines for essay_ideas so each message will be decrpyted starting from the beginning
     for Ct_String in Ct_Lines:
-        Coded_Ct_String = Ct.encode()
+        Coded_Ct_String = Ct_String.encode()
         Byte_Pt_String = cipher_suite.decrypt(Coded_Ct_String) # decrypts the message using the Fernet decrypt method
         Pt_String = str(Byte_Pt_String) # like in encrypt3, this changes the byte type message into a string
         # next three lines once again trim down the message so it is more easily digestible by the reader
@@ -193,12 +194,12 @@ def decrypt3():
 def rev_str(s):
     return s[::-1]
 
-InverseRandomizeNumToLetter = {v: k for k, v in RandomizeNumToLetter.items()} # inverses NumToLetter library
-InverseAlphaToNum = {v: k for k, v in AlphToaNum.items()} # inverses AlphaToNum library
+InverseRandomizeNumToLetter = {v: k for k, v in RandomizeNumToLetter.items()} 
+InverseAlphaToNum = {v: k for k, v in AlphaToNum.items()} 
 
 Count_Wrong_Auth = 0
 '''
-This next art is the skeleton of the actual code running. It checks for a password then asks what log the user wants to access.
+This next part is the skeleton of the actual code running. It checks for a password then asks what log the user wants to access.
 Then it asks if they would like to read or write. If they want to write they can, and it will be passed, encrypted, to the specified file.
 If they want to read, the system will decrypt the message they want and will return it to them.
 If there is a bad command or password, it will not accept it.
@@ -255,13 +256,10 @@ if password == 'college':
             break
         else:
             print('leave, you sit on a throne of lies.')
-            if count_wrong >= 2:
+            if Count_Wrong_Auth >= 2:
                 break
             Count_Wrong_Auth = Count_Wrong_Auth + 1
-            print('you have ' + str(3-count_wrong) + ' more attempts')
+            print('you have ' + str(3-Count_Wrong_Auth) + ' more attempts')
 else:
   print('wrong password, goodbye')
-
-
-
 
