@@ -198,7 +198,7 @@ def decrypt3():
     key = base64.urlsafe_b64encode(kdf.derive(fernet_password))
     cipher_suite = Fernet(key)  # uses Fernet to create a key in this specific line
     org_msg = open('essay_ideas.txt', 'r')
-    # reads off the lines for essay_ideas so each message will be decrpyted starting from the beginning
+    # reads off the lines for essay_ideas so each message will be decrypted starting from the beginning
     ct_lines = org_msg.readlines()
     for Ct_String in ct_lines:
         coded_ct_string = Ct_String.encode()
@@ -228,10 +228,10 @@ InverseAlphaToNum = {v: k for k, v in AlphaToNum.items()}
 
 Count_Wrong_Auth = 0
 '''
-This next part is the skeleton of the actual code running. It checks for a password then asks what log the user wants to access.
-Then it asks if they would like to read or write. If they want to write they can, and it will be passed, encrypted, to the specified file.
-If they want to read, the system will decrypt the message they want and will return it to them.
-If there is a bad command or password, it will not accept it.
+This next part is the skeleton of the actual code running. It checks for a password then asks what log the user 
+wants to access. Then it asks if they would like to read or write. If they want to write they can, and it will be 
+passed, encrypted, to the specified file. If they want to read, the system will decrypt the message they want and 
+will return it to them. If there is a bad command or password, it will not accept it.
 '''
 print('Welcome, user')
 password = input('Password:')
