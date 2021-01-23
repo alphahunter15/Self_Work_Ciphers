@@ -44,27 +44,28 @@ This is an example of a few of the methods that can be run and what it looks lik
 
 This is an example of the first encryption method. While the Fernet encryption and decryption is more complicated, this is indicative of the relative complexity of most of the methods I made specifically for this program.
 ```python
-def encrypt1(Plaintext):
+def encrypt1(plaintext):
     """
-    encrypt1 uses an integer variable to add one number to the numerical value of each letter in the string, incrementing each letter integer value by one.
-    It then uses the InverseRandomizeNumToLetter library to randomly assign the incremented numbers to a letter. Then each letter is added to an array, 
+    encrypt1 uses an integer variable to add one number to the numerical value of each letter in the string,
+    incrementing each letter integer value by one. It then uses the InverseRandomizeNumToLetter library to randomly
+    assign the incremented numbers to a letter. Then each letter is added to an array,
     which then is made into a string. the string is then reversed and added to isaiah_log
     """
-    for Pt_Letter in Plaintext:
-        Pt_Number = AlphaToNum[Pt_Letter]
-        global n 
-        Pt_n_Number = (Pt_Number + n) % 66 
-        n += 1 # increments n
-        Ct_Number = InverseRandomizeNumToLetter[Pt_n_Number] 
-        p.append(Ct_Number) 
-    Ct_String = ''.join(p) # joins the array together into a string
-    Inv_Ct_String = rev_str(Ct_String) # reverses the string
-    p.clear() # clears the array p for later use
+    for pt_letter in plaintext:
+        pt_number = AlphaToNum[pt_letter]
+        global n
+        pt_n_number = (pt_number + n) % 66
+        n += 1  # increments n
+        ct_number = InverseRandomizeNumToLetter[pt_n_number]
+        p.append(ct_number)
+    ct_string = ''.join(p)  # joins the array together into a string
+    inv_ct_string = rev_str(ct_string)  # reverses the string
+    p.clear()  # clears the array p for later use
     i = open('isaiah_log.txt', '+a')
-    i.write(Inv_Ct_String) 
-    i.write('\n') # adds a return to isaiah_log so another addition will be added to a new line
+    i.write(inv_ct_string)
+    i.write('\n')  # adds a return to isaiah_log so another addition will be added to a new line
     i.close()
-    n = 0 # resets the incrementing integer to zero
+    n = 0  # resets the incrementing integer to zero
 ```
 # Installation
 For exact steps from opening this repository to complete installation and running the file, go to [this google doc](https://docs.google.com/document/d/1mGp1GLM2mWppr5IwcDUkTvyPte51XdOpkXdlRKzvZXQ/edit?usp=sharing)
