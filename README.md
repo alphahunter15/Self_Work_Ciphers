@@ -39,6 +39,7 @@ Method two (before using the randomized library) is in essence a Vigenere Cipher
 Installed and used from the Python3.6 repository. These are downloaded to allow the usage of Fernet Encryption for method 3 in my program.
 # Examples
 For a list of possible commands and expected responses see [this google doc](https://docs.google.com/document/d/1eEvCztSxY11deTZfoWER0_cVR8TdM1DOIHUwwQolXHg/edit?usp=sharing)
+
 This is an example of a few of the methods that can be run and what it looks like. Becuase I will have emptied out my log files for you to use, this shows how it works with multiple entries that are printed from the encrypted log file.
 ![image](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/Github.jpg?raw=true)
 
