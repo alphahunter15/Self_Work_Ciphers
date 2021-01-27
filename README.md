@@ -85,6 +85,8 @@ The commands are the same for both Windows and Linux
 * ``` python3 encrypt_logs.py ```
 # Where This Can Be Improved
 I could combine all encryption methods into one to create a much more complicated and harder to crack the system. For example, it is easy to see a string is encoded with Fernet encryption because each string starts with gAAAAA. Combining methods would get rid of this hint. 
+
+More possible improvements can be found in the [Features and Possible Expansions](#features-and-possible-expansions) section
 # Contribute
 See [Contributions.md](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/Contributions.md)
 # Credits
