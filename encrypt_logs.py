@@ -40,10 +40,10 @@ def encrypt1(plaintext):
     for pt_letter in plaintext:
         pt_number = AlphaToNum[pt_letter]
         global n
-        pt_n_number = (pt_number + n) % 66
+        ct_number = (pt_number + n) % 66
         n += 1  # increments n
-        ct_number = InverseRandomizeNumToLetter[pt_n_number]
-        p.append(ct_number)
+        ct_letter = InverseRandomizeNumToLetter[ct_number]
+        p.append(ct_letter)
     ct_string = ''.join(p)  # joins the array together into a string
     inv_ct_string = rev_str(ct_string)  # reverses the string
     p.clear()  # clears the array p for later use
