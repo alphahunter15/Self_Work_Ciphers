@@ -36,21 +36,23 @@ def encrypt1(plaintext):
     incrementing each letter integer value by one. It then uses the InverseRandomizeNumToLetter library to randomly
     assign the incremented numbers to a letter. Then each letter is added to an array,
     which then is made into a string. the string is then reversed and added to isaiah_log
+    I will explain every step in this specific step, then add sparse comments to the other methods
+    becuase other than FUTURE: 3, the methods are similar
     """
     for pt_letter in plaintext:
-        pt_number = AlphaToNum[pt_letter]
-        global n
-        ct_number = (pt_number + n) % 66
+        pt_number = AlphaToNum[pt_letter] # converts letter to corresponding number
+        global n # calls on a variable for incrementing that I use throughout the program, so it is global
+        ct_number = (pt_number + n) % 66 # adds the lettertonumber to n, then mods it by 66
         n += 1  # increments n
-        ct_letter = InverseRandomizeNumToLetter[ct_number]
-        p.append(ct_letter)
+        ct_letter = InverseRandomizeNumToLetter[ct_number] # runs the combined number through te random library
+        p.append(ct_letter) # adds this letter to an array for storing each letter until it is passed to the log
     ct_string = ''.join(p)  # joins the array together into a string
     inv_ct_string = rev_str(ct_string)  # reverses the string
     p.clear()  # clears the array p for later use
-    i = open('isaiah_log.txt', '+a')
-    i.write(inv_ct_string)
+    i = open('isaiah_log.txt', '+a') # opens the log I am aiming to add too
+    i.write(inv_ct_string) # writes this string to the log
     i.write('\n')  # adds a return to isaiah_log so another addition will be added to a new line
-    i.close()
+    i.close() # shuts the log becuase it is done writing
     n = 0  # resets the incrementing integer to zero
 
 
