@@ -69,7 +69,20 @@ def encrypt1(plaintext):
     n = 0  # resets the incrementing integer to zero
 ```
 # Installation
-For exact steps from opening this repository to complete installation and running the file, go to [this google doc](https://docs.google.com/document/d/1mGp1GLM2mWppr5IwcDUkTvyPte51XdOpkXdlRKzvZXQ/edit?usp=sharing)
+After opening the repository, download all files and ensure that you have Python installed on your computer. Python3 comes pre-installed on Windows and Linux systems have this installed so that shouldn't be a problem. However, Python3.6 may not be updated on Linux. Run these two commands in terminal to update:
+* ```python sudo apt-get update ```
+* ```python sudo apt-get install python3.6 ```
+* (leave out the sudo on Windows)
+
+You may also not have the Python cryptography module installed, so also type in 
+* ```python sudo pip install cryptography ```
+* (once again leaving out the sudo command for Windows)
+
+Once all files are downloaded, be sure to store them in one single folder. For example, I store them on my desktop in a folder called Python_UCSB_Encrypt_Decrypt. I suggest you do the same because then you can run these commands to navigate to and run the program.
+If you have installed the files on your desktop under the folder Python_UCSB_Encrypt_Decrypt, you may run these commands.
+The commands are the same for both Windows and Linux
+* ```python cd Desktop\Python_UCSB_Encrypt_Decrypt ```
+* ```python python3 encrypt_logs.py ```
 # Where This Can Be Improved
 I could combine all encryption methods into one to create a much more complicated and harder to crack the system. For example, it is easy to see a string is encoded with Fernet encryption becuase each string starts with gAAAAA. Combining methods would get rid of this hint. 
 # Contribute
