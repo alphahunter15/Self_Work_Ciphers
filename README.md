@@ -41,7 +41,7 @@ Installed and used from the Python3.6 repository. These are downloaded to allow 
 For a list of possible commands and expected responses see [this google doc](https://docs.google.com/document/d/1eEvCztSxY11deTZfoWER0_cVR8TdM1DOIHUwwQolXHg/edit?usp=sharing)
 
 This is an example of a few of the methods that can be run and what it looks like. Becuase I will have emptied out my log files for you to use, this shows how it works with multiple entries that are printed from the encrypted log file.
-![image](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/Github.jpg?raw=true)
+![image](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/UCSB_CCS_Program.gif?raw=true)
 
 This is an example of the first encryption method. While the Fernet encryption and decryption is more complicated, this is indicative of the relative complexity of most of the methods I made specifically for this program.
 ```python
