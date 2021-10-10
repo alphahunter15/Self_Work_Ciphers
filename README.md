@@ -1,6 +1,6 @@
-# UCSB-CCS-Computing
+# Self_Work_Ciphers
 ### Simple. Secure. Expandable
-* [UCSB-CCS-Computing](#ucsb-ccs-computing)
+* Self_Work_Ciphers
   * [Purpose](#purpose)
   * [Motivation](#motivation)
   * [Features And Possible Expansions](#features-and-possible-expansions)
@@ -40,9 +40,6 @@ Installed and used from the Python3.6 repository. These are downloaded to allow 
 # Examples
 For a list of possible commands and expected responses see [this google doc](https://docs.google.com/document/d/1eEvCztSxY11deTZfoWER0_cVR8TdM1DOIHUwwQolXHg/edit?usp=sharing)
 
-This is an example of a few of the methods that can be run and what it looks like. Because I will have emptied out my log files for you to use, this shows how it works with multiple entries that are printed from the encrypted log file.
-![image](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/UCSB_CCS_Program.gif?raw=true)
-
 This is an example of the first encryption method. While the Fernet encryption and decryption is more complicated, this is indicative of the relative complexity of most of the methods I made specifically for this program.
 ```python
 def encrypt1(plaintext):
@@ -78,17 +75,17 @@ You may also not have the Python cryptography module installed, so also type in
 * ``` sudo pip install cryptography ```
 * (once again leaving out the sudo command for Windows)
 
-Once all files are downloaded, be sure to store them in one single folder. For example, I store them on my desktop in a folder called Python_UCSB_Encrypt_Decrypt. I suggest you do the same because then you can run these commands to navigate to and run the program.
-If you have installed the files on your desktop under the folder Python_UCSB_Encrypt_Decrypt, you may run these commands.
+Once all files are downloaded, be sure to store them in one single folder. For example, I store them on my desktop in a folder called Self_Work_Ciphers. I suggest you do the same because then you can run these commands to navigate to and run the program.
+If you have installed the files on your desktop under the folder Self_Work_Ciphers, you may run these commands.
 The commands are the same for both Windows and Linux
-* ``` cd Desktop\Python_UCSB_Encrypt_Decrypt ```
+* ``` cd Desktop\Self_Work_Ciphers ```
 * ``` python3 encrypt_logs.py ```
 # Where This Can Be Improved
 I could combine all encryption methods into one to create a much more complicated and harder to crack the system. For example, it is easy to see a string is encoded with Fernet encryption because each string starts with gAAAAA. Combining methods would get rid of this hint. 
 
 More possible improvements can be found in the [Features and Possible Expansions](#features-and-possible-expansions) section
 # Contribute
-See [Contributions.md](https://github.com/alphahunter15/UCSB-CCS-Computing/blob/main/Not_Needed_For_Download/Contributions.md)
+See [Contributions.md](https://github.com/alphahunter15/Self_Work_Ciphers/blob/main/Not_Needed_For_Download/Contributions.md)
 # Credits
 My Uncle David, who taught me my first line of code and helped immensely with advising me on how to look professional. 
 
@@ -96,6 +93,6 @@ My parents, who provided their non-computing background, allowed me to make the 
 
 My sister, who helped me debug my program and gave me many words of encouragement.
 
-[back to top](#ucsb-ccs-computing)
+[back to top](#self-work-ciphers)
 
 
