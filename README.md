@@ -89,7 +89,7 @@ See [Contributions.md](https://github.com/alphahunter15/Self_Work_Ciphers/blob/m
 # Credits
 My Uncle David, who taught me my first line of code and helped immensely with advising me on how to look professional. 
 
-My parents, who provided their non-computing background, allowed me to make the system more understandable. 
+My parents, who provided their non-computing background, allowing me to make the system more understandable. 
 
 My sister, who helped me debug my program and gave me many words of encouragement.
 
