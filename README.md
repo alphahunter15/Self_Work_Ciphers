@@ -93,6 +93,6 @@ My parents, who provided their non-computing background, allowing me to make the
 
 My sister, who helped me debug my program and gave me many words of encouragement.
 
-[back to top](#self-work-ciphers)
+[back to top](#self_work_ciphers)
 
 
