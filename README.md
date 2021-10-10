@@ -1,6 +1,6 @@
 # Self_Work_Ciphers
 ### Simple. Secure. Expandable
-* Self_Work_Ciphers
+* [Self_Work_Ciphers](#self-work-ciphers)
   * [Purpose](#purpose)
   * [Motivation](#motivation)
   * [Features And Possible Expansions](#features-and-possible-expansions)
